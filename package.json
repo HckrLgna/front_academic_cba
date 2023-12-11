@@ -1,0 +1,40 @@
+{
+  "name": "vue-light-bootstrap-dashboard",
+  "version": "2.1.0",
+  "private": false,
+  "description": "Vue light bootstrap dashboard",
+  "author": "cristijora <joracristi@gmail.com>",
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "e2e": "node test/e2e/runner.js",
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve --open",
+    "lint-fix": "vue-cli-service lint --fix"
+  },
+  "dependencies": {
+    "bootstrap": "4.6.0",
+    "cache-loader": "^4.1.0",
+    "chartist": "0.11.0",
+
+    "register-service-worker": "1.7.2",
+    "terser-webpack-plugin": "*",
+    "v-tooltip": "2.0.0-rc.33",
+    "vue": "*",
+    "vue-router": "*"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "*",
+    "@vue/cli-plugin-eslint": "*",
+    "@vue/cli-plugin-pwa": "3.12.1",
+    "@vue/cli-service": "3.12.1",
+    "sass": "*",
+    "sass-loader": "*",
+    "vue-template-compiler": "*"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 11"
+  ]
+}
