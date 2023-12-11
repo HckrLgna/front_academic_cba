@@ -6,8 +6,8 @@ import NotFound from '../pages/NotFoundPage.vue'
 import Overview from 'src/pages/Overview.vue'
 import UserProfile from 'src/pages/UserProfile.vue'
 import TableList from 'src/pages/TableList.vue'
-import Typography from 'src/pages/Typography.vue'
-import Icons from 'src/pages/Icons.vue'
+import Module from 'src/pages/Modules.vue'
+import Courses from 'src/pages/Courses.vue'
 
 import Notifications from 'src/pages/Notifications.vue'
 import Upgrade from 'src/pages/Upgrade.vue'
@@ -41,12 +41,12 @@ const routes = [
       {
         path: 'typography',
         name: 'Typography',
-        component: Typography
+        component: Module
       },
       {
         path: 'icons',
         name: 'Icons',
-        component: Icons
+        component: Courses
       },
       {
         path: 'notifications',

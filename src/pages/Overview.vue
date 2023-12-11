@@ -124,7 +124,7 @@
             </template>
             <l-table :data="tableData.data"
                      :columns="tableData.columns">
-              <template slot="columns"></template>
+              <template slot="columns"> </template>
 
               <template slot-scope="{row}">
                 <td>

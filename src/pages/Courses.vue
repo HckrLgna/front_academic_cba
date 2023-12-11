@@ -7,12 +7,14 @@
                 body-classes="table-full-width table-responsive"
           >
             <template slot="header">
-              <h4 class="card-title">Total Students</h4>
-              <p class="card-category">Table about the number total students</p>
+              <h4 class="card-title">Módulos</h4>
+              <p class="card-category">Tabla sobre los módulos</p>
             </template>
             <l-table class="table-hover table-striped"
                      :columns="table1.columns"
-                     :data="table1.data">
+                     :data="table1.data"
+                      >
+
             </l-table>
           </card>
         </div>
@@ -32,23 +34,21 @@ export default {
   data() {
     return {
       table1: {
-        columns: ['Id', 'Nombre', 'Correo', 'Telefono', 'Tipo'],
+        columns: ['Id', 'Nombre', 'Nivel_ID', 'Options'],
         data: [],
       },
     };
   },
   mounted() {
-    // Realizar la solicitud GET al endpoint
-    axios.get('https://proyecto-sw2.up.railway.app/api/usuarios')
+    // Realizar la solicitud GET al nuevo endpoint
+    axios.get('https://proyecto-sw2.up.railway.app/api/modulos')
       .then(response => {
         // Actualizar los datos de la tabla con la respuesta
-        this.table1.data = response.data.map(user => ({
-          id: user.id,
-          nombre: user.nombre,
-          correo: user.correo,
-          telefono: user.telefono,
-          tipo: user.tipo,
-          options: 'edit', // Agrega la columna de opciones si es necesario
+        this.table1.data = response.data.map(modulo => ({
+          id: modulo.id,
+          nombre: modulo.nombre,
+          nivel_id: 'BASIC',
+            // Agrega la columna de opciones si es necesario
         }));
       })
       .catch(error => {
