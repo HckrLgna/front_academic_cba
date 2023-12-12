@@ -115,7 +115,7 @@
         const color = Math.floor((Math.random() * 4) + 1)
         this.$notifications.notify(
           {
-            message: `<span>Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer.</span>`,
+            message: `<span><b> Success - </b> This is a regular notification made with ".alert-success"</span>`,
             icon: 'nc-icon nc-app',
             horizontalAlign: horizontalAlign,
             verticalAlign: verticalAlign,
