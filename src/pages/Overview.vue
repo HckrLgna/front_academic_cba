@@ -9,7 +9,7 @@
             </div>
             <div slot="content">
               <p class="card-category">INSCRIBED</p>
-              <h4 class="card-title">10100</h4>
+              <h4 class="card-title">{{reportData.cantInscritos}}</h4>
             </div>
             <div slot="footer">
               <i class="fa fa-refresh"></i>Updated now
@@ -24,7 +24,7 @@
             </div>
             <div slot="content">
               <p class="card-category">TOTAL</p>
-              <h4 class="card-title">10500</h4>
+              <h4 class="card-title">{{reportData.cantAlumnos}}</h4>
             </div>
             <div slot="footer">
               <i class="fa fa-calendar-o"></i>Last day
@@ -39,7 +39,7 @@
             </div>
             <div slot="content">
               <p class="card-category">ABANDONED</p>
-              <h4 class="card-title">200</h4>
+              <h4 class="card-title">{{reportData.abandono}}</h4>
             </div>
             <div slot="footer">
               <i class="fa fa-clock-o"></i>Last day
@@ -158,7 +158,7 @@
   import ChartCard from 'src/components/Cards/ChartCard.vue'
   import StatsCard from 'src/components/Cards/StatsCard.vue'
   import LTable from 'src/components/Table.vue'
-
+  import axios from 'axios';
   export default {
     components: {
       LTable,
@@ -248,6 +248,27 @@
             {title: 'Read "Following makes Medium better"', checked: false},
             {title: 'Unfollow 5 enemies from twitter', checked: false}
           ]
+        },
+        reportData: {
+          cantAlumnos: 0,
+          cantInscritos: 0,
+          abandono: 0
+        }
+
+      }
+    },
+    mounted(){
+      this.fetchReportData();
+    },
+    methods:{
+      async fetchReportData() {
+        try {
+          const response = await axios.get('https://proyecto-sw2.up.railway.app/api/reporte');
+          this.reportData = response.data;
+        } catch (error) {
+          console.error('Error al obtener datos del informe:', error.message);
+          // Puedes manejar el error según sea necesario
+          // Por ejemplo, mostrar un mensaje de error al usuario
         }
       }
     }

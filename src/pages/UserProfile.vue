@@ -7,8 +7,19 @@
                 body-classes="table-full-width table-responsive"
           >
             <template slot="header">
-              <h4 class="card-title">Total Students</h4>
-              <p class="card-category">Table about the number total students</p>
+              <div class="row">
+                <div class="col md-11">
+                  <h4 class="card-title">Total Students</h4>
+                  <p class="card-category">Table about the number total students</p>
+                </div>
+                <div class="col md-1 text-right">
+                  <router-link :to="{path:'/register'}" class="btn btn-primary">Add Student</router-link>
+                </div>
+
+
+              </div>
+
+
             </template>
             <l-table class="table-hover table-striped"
                      :columns="table1.columns"

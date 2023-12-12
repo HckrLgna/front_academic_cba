@@ -6,6 +6,7 @@ function resolveSrc(_path) {
 }
 
 module.exports = {
+  publicPath: "/front_academic_cba/",
   lintOnSave: false,
   configureWebpack: {
     // Set up all the aliases we use in our app.

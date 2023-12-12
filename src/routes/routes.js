@@ -5,6 +5,8 @@ import NotFound from '../pages/NotFoundPage.vue'
 // Admin pages
 import Overview from 'src/pages/Overview.vue'
 import UserProfile from 'src/pages/UserProfile.vue'
+import EditProfileForm from 'src/pages/UserProfile/EditProfileForm.vue'
+import CreateProfileForm from 'src/pages/UserProfile/CreateProfileForm.vue'
 import TableList from 'src/pages/TableList.vue'
 import Module from 'src/pages/Modules.vue'
 import Courses from 'src/pages/Courses.vue'
@@ -32,6 +34,11 @@ const routes = [
         path: 'user',
         name: 'User',
         component: UserProfile
+      },
+      {
+        path: 'register',
+        name: 'register',
+        component: CreateProfileForm
       },
       {
         path: 'table-list',
